@@ -1,0 +1,23 @@
+.task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  background: aqua;
+  gap: 1rem;
+  width: 100%;
+  padding: 10px 15px;
+}
+.title {
+  font-size: 18px;
+  line-height: 14px;
+}
+.btn {
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  line-height: 14px;
+  border: 0px;
+  background-color: blue;
+  color: white;
+}

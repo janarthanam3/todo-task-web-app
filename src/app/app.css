@@ -6,16 +6,21 @@
 .member-cards {
   display: flex;
   max-height: calc(100vh - 30vh - 60px);
-  min-width: calc(100vw - 35px - 50vw);
+  min-width: calc(100vw - 40px - 50vw  - 10px);
   flex-direction: column;
   gap: 1rem;
   overflow: auto;
 }
 .task-cards {
   display: flex;
-  max-height: calc(100vh - 30vh - 60px);
-  min-width: calc(100vw - 35px - 50vw);
+  min-width: calc(100vw - 40px - 50vw  - 10px);
   flex-direction: column;
   gap: 1rem;
+}
+.task-card-content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: calc(100vh - 30vh - 60px - 60px);
   overflow: auto;
 }

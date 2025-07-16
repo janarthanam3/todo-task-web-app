@@ -21,6 +21,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: calc(100vh - 30vh - 60px - 60px);
+  max-height: calc(100vh - 30vh - 60px - 60px - 10px);
   overflow: auto;
 }

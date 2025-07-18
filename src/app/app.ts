@@ -15,6 +15,10 @@ interface IMember {
     desc: string;
   }[];
 }
+interface IFromData {
+  status: boolean;
+  data: { title: string; desc: string; date: string };
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
@@ -80,7 +84,21 @@ export class App {
     },
   ];
   selectedMember: IMember | null = null;
-  memberClick(event: any) {
+  isFormOpen: boolean = false;
+  memberClick(event: IMember) {
     this.selectedMember = event;
+  }
+  addTaskClick(state: boolean) {
+    this.isFormOpen = state;
+  }
+  taskActions(event: IFromData) {
+    if (event.status) {
+      this.isFormOpen = false;
+      this.selectedMember?.tasks.push(event.data);
+      console.log(this.members);
+      console.log(this.selectedMember);
+    } else {
+      this.isFormOpen = false;
+    }
   }
 }

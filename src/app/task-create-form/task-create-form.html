@@ -2,26 +2,46 @@
 <dialog open>
   <header class="header">
     <div class="box">
-      <p>add create form</p>
+      <p>create task for {{ memberName }}</p>
       <div class="line"></div>
     </div>
   </header>
   <form>
     <div class="formelement">
       <p class="label">title</p>
-      <input type="text" />
+      <input [(ngModel)]="title" name="title" type="text" />
     </div>
     <div class="formelement">
       <p class="label">desc</p>
-      <textarea name="desc"></textarea>
+      <textarea [(ngModel)]="desc" name="desc"></textarea>
     </div>
     <div class="formelement">
       <p class="label">date</p>
-      <input type="date" />
+      <input [(ngModel)]="date" name="date" type="date" />
     </div>
   </form>
   <footer class="footer">
-    <button class="btn cancel">cancel</button>
-    <button class="btn submit">submit</button>
+    <button
+      (click)="
+        formAction.emit({
+          status: false,
+          data: { title: title, desc: desc, date: date }
+        })
+      "
+      class="btn cancel"
+    >
+      cancel
+    </button>
+    <button
+      (click)="
+        formAction.emit({
+          status: true,
+          data: { title: title, desc: desc, date: date }
+        })
+      "
+      class="btn submit"
+    >
+      submit
+    </button>
   </footer>
 </dialog>

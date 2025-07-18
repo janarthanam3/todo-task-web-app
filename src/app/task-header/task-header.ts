@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 interface IMember {
   name: string;
   position: string;
@@ -17,4 +17,5 @@ interface IMember {
 })
 export class TaskHeader {
 @Input({required: true}) selectedMember: IMember | null = null;
+@Output() addTaskClick = new EventEmitter<boolean>();
 }

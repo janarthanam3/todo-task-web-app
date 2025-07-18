@@ -1,3 +1,6 @@
+@if (isFormOpen) {
+<app-task-create-form [memberName]="selectedMember?.name" (formAction)="taskActions($event)"></app-task-create-form>
+}@else {
 <app-header></app-header>
 <div class="contents">
   <div class="member-cards">
@@ -9,12 +12,13 @@
     }
   </div>
   <div class="task-cards">
-    <app-task-header [selectedMember]="selectedMember"></app-task-header>
+    <app-task-header
+      (addTaskClick)="addTaskClick($event)"
+      [selectedMember]="selectedMember"
+    ></app-task-header>
     <div class="task-card-content">
       <app-task-content [selectedMember]="selectedMember"></app-task-content>
     </div>
   </div>
 </div>
-@if (false) {
-<app-task-create-form></app-task-create-form>
 }

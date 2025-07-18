@@ -16,10 +16,5 @@ interface IMember {
   styleUrl: './task-content.css',
 })
 export class TaskContent {
-  @Input() selectedMember: IMember | null = null;
-  ngOnChanges() {
-    console.log(this.selectedMember!.tasks!.length > 0);
-    
-    console.log('TaskContent component input changed:', this.selectedMember);
-  }
+  @Input({required: true}) selectedMember: IMember | null = null;
 }

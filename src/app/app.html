@@ -9,11 +9,9 @@
     }
   </div>
   <div class="task-cards">
-    <app-task-header></app-task-header>
+    <app-task-header [selectedMember]="selectedMember"></app-task-header>
     <div class="task-card-content">
-
       <app-task-content [selectedMember]="selectedMember"></app-task-content>
-     
     </div>
   </div>
 </div>

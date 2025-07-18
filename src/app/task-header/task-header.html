@@ -1,4 +1,10 @@
 <div class="task-header">
-  <p class="title">Task Header</p>
+  <p class="title">
+    @if (selectedMember) {
+      {{selectedMember.name}}'s task list
+    }@else {
+      task list
+    }
+  </p>
   <button class="btn">add</button>
 </div>

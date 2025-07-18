@@ -1,9 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-interface IFromData {
-  status: boolean;
-  data: { title: string; desc: string; date: string };
-}
+import { IFromData } from '../config';
 @Component({
   selector: 'app-task-create-form',
   imports: [FormsModule],

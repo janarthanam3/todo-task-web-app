@@ -1,14 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-interface IMember {
-  name: string;
-  position: string;
-  img: string;
-  tasks: {
-    title: string;
-    date: string;
-    desc: string;
-  }[];
-}
+import { IMember } from '../config';
 @Component({
   selector: 'app-task-header',
   imports: [],

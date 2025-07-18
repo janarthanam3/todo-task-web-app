@@ -1,22 +1,19 @@
 <app-header></app-header>
 <div class="contents">
   <div class="member-cards">
-    <app-member-card></app-member-card>
-    <app-member-card></app-member-card>
-    <app-member-card></app-member-card>
-    <app-member-card></app-member-card>
-    <app-member-card></app-member-card>
-    <app-member-card></app-member-card>
-  </div> 
+    @for (member of members; track $index) {
+    <app-member-card (memberClick)="memberClick($event)" [member]="member"></app-member-card>
+    }
+  </div>
   <div class="task-cards">
     <app-task-header></app-task-header>
     <div class="task-card-content">
-      <app-task-content></app-task-content>
-      <app-task-content></app-task-content>
-      <app-task-content></app-task-content>
-      <app-task-content></app-task-content>
+      @for (task of selectedMember?.tasks; track $index) {
+        <app-task-content [task]="task"></app-task-content>
+      }
     </div>
   </div>
 </div>
-
+@if (false) {
 <app-task-create-form></app-task-create-form>
+}

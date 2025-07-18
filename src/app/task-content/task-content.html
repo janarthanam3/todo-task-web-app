@@ -1,9 +1,20 @@
+@if (selectedMember) { @if (selectedMember.tasks.length > 0) { @for ( task of
+selectedMember.tasks; track $index) {
 <div class="task-content">
-    <div class="header">
-        <p class="title">{{task.title}}</p>
-        <p class="sub-title">{{task.date}}</p>
-    </div>
-    <div class="content">
-       {{task.desc}}
-    </div>
+  <div class="header">
+    <p class="title">{{ task.title }}</p>
+    <p class="sub-title">{{ task.date }}</p>
+  </div>
+  <div class="content">
+    {{ task.desc }}
+  </div>
 </div>
+} } @else {
+<div class="no-tasks">
+  <p class="no-tasks-text">No tasks available for this member</p>
+</div>
+} }@else {
+<div class="no-member-selected">
+  <p class="no-member-text">No member selected</p>
+</div>
+}

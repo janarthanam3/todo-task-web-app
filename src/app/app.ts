@@ -23,7 +23,7 @@ interface IMember {
 })
 export class App {
   protected readonly title = signal('todo-task-web-app');
-  members:IMember[] = [
+  members: IMember[] = [
     {
       name: 'john',
       position: 'web developer',
@@ -64,13 +64,7 @@ export class App {
       name: 'vikram',
       position: 'associate',
       img: '',
-      tasks: [
-        {
-          title: 'documents',
-          date: '02/02/2025',
-          desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium similique quos dignissimos quas vero ab error, saepe, culpa reiciendis maiores unde quis perspiciatis est atque officiis. ',
-        },
-      ],
+      tasks: [],
     },
     {
       name: 'vijay',
